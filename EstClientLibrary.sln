@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstClient", "EstClient\EstClient.csproj", "{87CE0E09-A490-4108-B1EC-8D7D74CE723C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstClientLibrary", "EstClientLibrary\EstClientLibrary.csproj", "{87CE0E09-A490-4108-B1EC-8D7D74CE723C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstClient.Tests", "EstClient.Tests\EstClient.Tests.csproj", "{5C1CFD48-BB8D-4CCF-910E-C407AD86C189}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstClientLibrary.Tests", "EstClientLibrary.Tests\EstClientLibrary.Tests.csproj", "{5C1CFD48-BB8D-4CCF-910E-C407AD86C189}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

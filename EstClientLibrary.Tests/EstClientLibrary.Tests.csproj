@@ -4,12 +4,25 @@
         <TargetFramework>net5.0</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>EstClientLibrary.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="NUnit" Version="3.12.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+        <PackageReference Include="WireMock.Net" Version="1.4.13" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\EstClientLibrary\EstClientLibrary.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="cacerts.p7">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>
