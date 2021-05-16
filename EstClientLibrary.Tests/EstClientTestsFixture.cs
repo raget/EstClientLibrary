@@ -11,6 +11,8 @@ namespace EstClientLibrary.Tests
             get
             {
                 var handler = new HttpClientHandler();
+                // Do not ignore server certificate errors in production.
+                // This is only for testing.
                 handler.ServerCertificateCustomValidationCallback += (_, _, _, _) => true;
                 return handler;
             }
@@ -18,7 +20,7 @@ namespace EstClientLibrary.Tests
 
         private void SetupEstServerCACertificates(string expectedCACerts)
         {
-            server.Given(
+            _server.Given(
                     Request.Create()
                         .UsingGet()
                         .WithPath("/.well-known/est/cacerts"))

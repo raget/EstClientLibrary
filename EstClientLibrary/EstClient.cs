@@ -17,6 +17,12 @@ namespace EstClientLibrary
             };
         }
 
+        /// <summary>
+        /// Gets current EST CA certificate(s) from the EST server.
+        /// The EST client is assumed to perform this operation before performing other operations.
+        /// </summary>
+        /// <seealso cref="https://datatracker.ietf.org/doc/html/rfc7030#section-2.1"/>
+        /// <returns>CA certificate(s) of the EST server</returns>
         public async Task<string> GetCACertificates()
         {
             using var response = await _client.GetAsync("cacerts").ConfigureAwait(false);

@@ -7,19 +7,19 @@ namespace EstClientLibrary.Tests
 {
     public partial class EstClientTests
     {
-        private WireMockServer server;
+        private WireMockServer _server;
         private const int MockServerPort = 9999;
 
         [SetUp]
         public void Setup()
         {
-            server = WireMockServer.Start(MockServerPort, true);
+            _server = WireMockServer.Start(MockServerPort, true);
         }
 
         [TearDown]
         public void TearDown()
         {
-            server.Stop();
+            _server.Stop();
         }
 
         [Test]
@@ -30,7 +30,6 @@ namespace EstClientLibrary.Tests
             var expectedCACerts = await File.ReadAllTextAsync("cacerts.p7").ConfigureAwait(false);
             SetupEstServerCACertificates(expectedCACerts);
             var estClient = new EstClient(hostname, port, IgnoringServerCertificateHandler);
-
             var cacerts = await estClient.GetCACertificates().ConfigureAwait(false);
 
             Assert.That(cacerts, Is.EqualTo(expectedCACerts));
